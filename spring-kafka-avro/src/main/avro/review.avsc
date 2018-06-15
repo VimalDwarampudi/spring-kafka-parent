@@ -1,0 +1,9 @@
+{"namespace": "com.codebigbear.avro",
+  "type": "record",
+  "name": "Review",
+  "fields": [
+    {"name": "id", "type": "long", "doc": "Review ID " },
+    {"name": "title", "type": ["null", "string"], "default": null },
+    {"name": "created",  "type": { "type" : "long", "logicalType" : "timestamp-millis" } }
+  ]
+}

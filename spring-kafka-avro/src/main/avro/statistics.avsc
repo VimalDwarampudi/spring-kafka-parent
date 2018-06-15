@@ -1,0 +1,8 @@
+{"namespace": "com.codebigbear.avro",
+  "type": "record",
+  "name": "Statistics",
+  "fields": [
+    {"name": "count", "type": "long", "default": 0},
+    {"name": "last_count_time",  "type": { "type" : "long", "logicalType" : "timestamp-millis" } }
+  ]
+}
