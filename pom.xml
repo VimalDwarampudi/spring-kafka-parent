@@ -9,10 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>spring-kafka-producer</module>
         <module>spring-kafka-avro</module>
-        <module>spring-kafka-stream-hoppingwindow</module>
-        <module>spring-kafka-stream-tumblingwindow</module>
+        <module>spring-kafka-producer</module>
+        <module>spring-kafka-consumer</module>
+        <!--  <module>spring-kafka-stream-hoppingwindow</module>-->
+      <!--  <module>spring-kafka-stream-tumblingwindow</module>-->
     </modules>
 
 
@@ -20,14 +21,95 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.4.RELEASE</version>
+        <version>2.0.0.RELEASE</version>
     </parent>
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-kafka.version>1.2.2.RELEASE</spring-kafka.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <avro.version>1.8.2</avro.version>
+        <spring-kafka.version>2.1.4.RELEASE</spring-kafka.version>
+        <kafka.version>0.11.0.1</kafka.version>
+        <confluent.version>3.3.0</confluent.version>
     </properties>
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>http://packages.confluent.io/maven/</url>
+        </repository>
+
+        <repository>
+            <id>repository.spring.milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>https://repo.spring.io/milestone</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repository.spring.release</id>
+            <name>Spring GA Repository</name>
+            <url>https://repo.spring.io/plugins-release/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>${spring-kafka.version}</version>
+        </dependency>
+
+        <!-- for serializing/deserializing complex headers -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+
+
+        <!--
+                <dependency>
+                    <groupId>org.apache.kafka</groupId>
+                    <artifactId>kafka-clients</artifactId>
+                    <version>${kafka.version}</version>
+                </dependency>-->
+
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-avro-serializer</artifactId>
+            <version>${confluent.version}</version>
+        </dependency>
+
+
+<!--        <dependency>
+            <groupId>com.codebigbear.kafka.avro</groupId>
+            <artifactId>spring-kafka-avro</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>-->
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+
+    </dependencies>
 
 
 

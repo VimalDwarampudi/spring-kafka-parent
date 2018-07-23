@@ -13,23 +13,45 @@
     <artifactId>spring-kafka-producer</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <repositories>
+   <!-- <repositories>
         <repository>
             <id>confluent</id>
             <url>http://packages.confluent.io/maven/</url>
         </repository>
+
+        <repository>
+            <id>repository.spring.milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>https://repo.spring.io/milestone</url>
+        </repository>
     </repositories>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repository.spring.release</id>
+            <name>Spring GA Repository</name>
+            <url>https://repo.spring.io/plugins-release/</url>
+        </pluginRepository>
+    </pluginRepositories>-->
 
-    <properties>
-        <java.version>1.8</java.version>
-        <spring-kafka.version>1.2.2.RELEASE</spring-kafka.version>
-        <avro.version>1.8.2</avro.version>
+
+ <!--   <properties>
+        <spring-kafka.version>2.1.4.RELEASE</spring-kafka.version>
         <kafka.version>0.11.0.1</kafka.version>
         <confluent.version>3.3.0</confluent.version>
-    </properties>
+    </properties>-->
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.codebigbear.kafka.avro</groupId>
+            <artifactId>spring-kafka-avro</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+    <!--<dependencies>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -44,12 +66,12 @@
 
 
 
-
+&lt;!&ndash;
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
             <version>${kafka.version}</version>
-        </dependency>
+        </dependency>&ndash;&gt;
 
         <dependency>
             <groupId>io.confluent</groupId>
@@ -65,7 +87,7 @@
         </dependency>
 
 
-       <!-- <dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.25</version>
@@ -77,10 +99,9 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
         </dependency>
--->
 
 
-    </dependencies>
+    </dependencies>-->
 
 
         <build>

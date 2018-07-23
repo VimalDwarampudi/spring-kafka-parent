@@ -7,13 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-kafka-avro" />
+        <module name="spring-kafka-consumer" />
         <module name="spring-kafka-producer" />
-        <module name="spring-kafka-stream-hoppingwindow" />
-        <module name="spring-kafka-stream-tumblingwindow" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring-kafka-stream" target="1.8" />
+      <module name="spring-kafka-stream-hoppingwindow" target="1.8" />
+      <module name="spring-kafka-stream-tumblingwindow" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

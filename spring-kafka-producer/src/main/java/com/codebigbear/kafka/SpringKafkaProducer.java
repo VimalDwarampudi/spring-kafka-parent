@@ -1,6 +1,7 @@
-package com.codebigbear.kafka.producer;
+package com.codebigbear.kafka;
 
 import com.codebigbear.avro.Review;
+import com.codebigbear.kafka.producer.Sender;
 import org.joda.time.DateTime;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -8,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @SpringBootApplication
-public class SpringKafkaApplication implements CommandLineRunner {
+public class SpringKafkaProducer implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringKafkaApplication.class, args);
+        SpringApplication.run(SpringKafkaProducer.class, args);
     }
 
 
@@ -37,8 +38,8 @@ public class SpringKafkaApplication implements CommandLineRunner {
         review3.setCreated(DateTime.now());
 
         sender.send(review1);
-        //sender.send(review2);
-       //sender.send(review3);
+        sender.send(review2);
+        sender.send(review3);
 
 
     }
