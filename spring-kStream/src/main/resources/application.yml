@@ -1,0 +1,19 @@
+spring:
+  profiles:
+   actvive: local
+  kafka:
+    bootstrap-servers: localhost:9092
+    schema-registry: http://localhost:8081
+
+app:
+  topic:
+    send: kstreaminput
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.codebigbear.kstreams: INFO
+
+
+server.port: 8080

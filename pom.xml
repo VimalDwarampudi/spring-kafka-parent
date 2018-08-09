@@ -12,6 +12,9 @@
         <module>spring-kafka-avro</module>
         <module>spring-kafka-producer</module>
         <module>spring-kafka-consumer</module>
+
+        <module>spring-kStream</module>
+        <module>streaming-producer</module>
         <!--  <module>spring-kafka-stream-hoppingwindow</module>-->
       <!--  <module>spring-kafka-stream-tumblingwindow</module>-->
     </modules>
@@ -88,11 +91,19 @@
         </dependency>
 
 
-<!--        <dependency>
-            <groupId>com.codebigbear.kafka.avro</groupId>
-            <artifactId>spring-kafka-avro</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>-->
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-schema-registry-client</artifactId>
+            <version>${confluent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+
 
 
         <dependency>
@@ -107,6 +118,9 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
         </dependency>
+
+
+
 
 
     </dependencies>

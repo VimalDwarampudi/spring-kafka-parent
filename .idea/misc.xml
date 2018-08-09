@@ -10,6 +10,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/spring-kafka-stream/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-kafka-streams-tumblingwindow/pom.xml" />
       </set>
     </option>
   </component>
